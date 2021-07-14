@@ -140,7 +140,7 @@ int main()
 
 
 
-int lastFPS=0;
+
 
 #ifdef __EMSCRIPTEN__
 	emscripten_set_main_loop(main_loop,0,1);
@@ -200,20 +200,6 @@ int lastFPS=0;
 
             gui->run();
             driver->endScene();
-            			int fps = driver->getFPS();
-
-			if (lastFPS != fps)
-			{
-				irr::core::stringw str = L"Irrlicht Engine - Quake 3 Map example [";
-				str += driver->getName();
-				str += "] FPS:";
-				str += fps;
-
-				device->setWindowCaption(str.c_str());
-				lastFPS = fps;
-			}
-
-             device->sleep(101);
         }
         else
             device->yield();

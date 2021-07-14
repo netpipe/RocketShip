@@ -36,10 +36,20 @@ Event::~Event()
 {
 }
 
-// Sends the event value through to Invader's event processing system.
 void Event::ProcessEvent(Rocket::Core::Event& event)
 {
-    //if(event.GetTargetElement()->GetId() == "button") {
+    if(event.GetTargetElement()->GetId() == "dropdown-button") {
+        printf("dropdown");
+        Rocket::Core::Element* element = Context->GetDocument(0)->GetElementById("dropdown-content");
+        if(element->GetProperty("display")->ToString() == "block") {
+            element->SetProperty("display", "none");
+        }
+        else {
+            element->SetProperty("display", "block");
+        }
+    }
+    else {
+
         printf("button click\n");
         Context->UnloadAllDocuments();
         //Rocket::Core::ElementDocument* document = Context->LoadDocument("media/assets/second.rml");
@@ -50,8 +60,7 @@ void Event::ProcessEvent(Rocket::Core::Event& event)
             document->Show();
             document->RemoveReference();
         }
-    //}
-	//EventManager::ProcessEvent(event, value);
+    }
 }
 
 // Destroys the event.

@@ -4,7 +4,6 @@
 	<Project>
 		<Option title="Irrlicht Pong" />
 		<Option pch_mode="0" />
-		<Option default_target="default" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
