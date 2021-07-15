@@ -19,6 +19,7 @@
 
   Daniel Sudmann suddani@googlemail.com
 */
+#include <cstdlib>
 #include "CIrrRocketGUI.h"
 
 #include <Rocket/Core.h>
@@ -85,7 +86,16 @@ CIrrRocketGUI::CIrrRocketGUI(irr::IrrlichtDevice* device) : Device(device)
 	if (cursor)
 		cursor->RemoveReference();
 
-    //EventManager::LoadWindow("first");
+    system("php media/assets/first.php > media/assets/first.rml");
+    system("php media/assets/second.php > media/assets/second.rml");
+    system("php media/assets/third.php > media/assets/third.rml");
+
+    Rocket::Core::ElementDocument* document2 = RocketContext->LoadDocument("media/assets/second.rml");
+	if (document2)
+	{
+		document2->Show();
+		document2->RemoveReference();
+	}
 	Rocket::Core::ElementDocument* document = RocketContext->LoadDocument("media/assets/first.rml");
 	if (document)
 	{

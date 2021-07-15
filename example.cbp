@@ -63,6 +63,9 @@
 			<Add library="X11" />
 			<Add library="RocketCore" />
 			<Add library="freetype" />
+			<Add library="/home/gamedev/gamedev/libRocket/Build/libRocketControls.so" />
+			<Add library="/home/gamedev/gamedev/libRocket/Build/libRocketCore.so" />
+			<Add library="/home/gamedev/gamedev/libRocket/Build/libRocketDebugger.so" />
 			<Add directory="/home/Dev/libs/game/Irrlicht-SVN/lib/Linux" />
 			<Add directory="/home/Dev/libs/GUI/libRocket/Build" />
 			<Add directory="/home/gamedev/gamedev/libRocket/Build" />
@@ -113,14 +116,17 @@
 		<Unit filename="media/assets/demo.rml" />
 		<Unit filename="media/assets/demo.rml3" />
 		<Unit filename="media/assets/demo5.rml" />
+		<Unit filename="media/assets/first.php" />
 		<Unit filename="media/assets/first.rml" />
 		<Unit filename="media/assets/invader.rcss" />
 		<Unit filename="media/assets/invader.tga" />
 		<Unit filename="media/assets/present.tga" />
 		<Unit filename="media/assets/rkt.rcss" />
+		<Unit filename="media/assets/second.php" />
 		<Unit filename="media/assets/second.rml" />
 		<Unit filename="media/assets/test-1.rml" />
 		<Unit filename="media/assets/test-2.rml" />
+		<Unit filename="media/assets/third.php" />
 		<Unit filename="media/assets/third.rml" />
 		<Unit filename="media/assets/treeview.rml" />
 		<Unit filename="media/assets/window.rml" />

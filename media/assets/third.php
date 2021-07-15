@@ -1,6 +1,6 @@
 <rml>
 	<head>
-		<title>Second page</title>
+		<title>First page</title>
 		<link type="text/template" href="window.rml" />
 		<style>
 			body
@@ -24,11 +24,16 @@
 	</head>
 
 	<body template="window">
-        <p>Second RML</p>
-        <p>Custom content for second.rml</p>
-        <p>Current date: 2021-07-15 11:46:53</p>
+        <p>Third RML</p>
+        <p>Custom content for third.rml</p>
+         <?php
+            echo "<p>Current date: ";
+            echo date('Y-m-d H:i:s');
+            echo "</p>";
+         ?>
+
         <button onclick="first" id="button-first" type="button">Load first.rml</button> <br></br>
-        <button onclick="third" id="button-third" type="button">Load third.rml</button> <br></br>
+        <button onclick="second" id="button-second" type="button">Load second.rml</button> <br></br>
 
     </body>
 </rml>

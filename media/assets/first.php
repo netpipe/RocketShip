@@ -65,7 +65,12 @@
         </div>
 
         <p>First RML</p>
-        <p>Current date: 2021-07-15 11:46:53</p>        <p>Click on the image to load second.rml</p>
+        <?php
+            echo "<p>Current date: ";
+            echo date('Y-m-d H:i:s');
+            echo "</p>";
+         ?>
+        <p>Click on the image to load second.rml</p>
         <img src="clouds.jpg" onclick="second"/>
 
 

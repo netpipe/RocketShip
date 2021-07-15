@@ -40,12 +40,15 @@ void Event::ProcessEvent(Rocket::Core::Event& event)
 {
     if(event.GetTargetElement()->GetId() == "dropdown-button") {
         printf("dropdown");
-        Rocket::Core::Element* element = Context->GetDocument(0)->GetElementById("dropdown-content");
-        if(element->GetProperty("display")->ToString() == "block") {
-            element->SetProperty("display", "none");
-        }
-        else {
-            element->SetProperty("display", "block");
+        int numDocuments = Context->GetNumDocuments();
+        Rocket::Core::Element* element = Context->GetDocument(numDocuments-1)->GetElementById("dropdown-content");
+        if(element != NULL) {
+            if(element->GetProperty("display")->ToString() == "block") {
+                element->SetProperty("display", "none");
+            }
+            else {
+                element->SetProperty("display", "block");
+            }
         }
     }
     else {
