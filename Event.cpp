@@ -27,6 +27,8 @@
 
 #include "Event.h"
 #include <Rocket/Core.h>
+#include <Rocket/Controls.h>
+#include <iostream>
 
 Event::Event(const Rocket::Core::String& value, Rocket::Core::Context* context) : value(value), Context(context)
 {
@@ -38,9 +40,9 @@ Event::~Event()
 
 void Event::ProcessEvent(Rocket::Core::Event& event)
 {
+    int numDocuments = Context->GetNumDocuments();
     if(event.GetTargetElement()->GetId() == "dropdown-button") {
         printf("dropdown");
-        int numDocuments = Context->GetNumDocuments();
         Rocket::Core::Element* element = Context->GetDocument(numDocuments-1)->GetElementById("dropdown-content");
         if(element != NULL) {
             if(element->GetProperty("display")->ToString() == "block") {
@@ -51,11 +53,18 @@ void Event::ProcessEvent(Rocket::Core::Event& event)
             }
         }
     }
+    else if(event.GetTargetElement()->GetId() == "form"){
+        printf("form\n");
+        Rocket::Core::Element* textElement = event.GetTargetElement()->GetOwnerDocument()->GetElementById("textarea");
+        Rocket::Controls::ElementFormControlTextArea* text_area = dynamic_cast< Rocket::Controls::ElementFormControlTextArea* >(textElement);
+        std::cout<<"value: "<<text_area->GetValue().CString()<<std::endl;
+    }
     else {
-
         printf("button click\n");
-        Context->UnloadAllDocuments();
+        //Rocket::Core::ElementDocument* currentDocument = Context->GetDocument(numDocuments-1);
+        //Context->UnloadDocument(currentDocument);
         //Rocket::Core::ElementDocument* document = Context->LoadDocument("media/assets/second.rml");
+        event.GetTargetElement()->GetOwnerDocument()->Close();
         Rocket::Core::ElementDocument* document = Context->LoadDocument("media/assets/" + value + ".rml");
         if (document != NULL)
         {
