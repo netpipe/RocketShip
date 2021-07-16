@@ -63,9 +63,7 @@
 			<Add library="X11" />
 			<Add library="RocketCore" />
 			<Add library="freetype" />
-			<Add library="/home/gamedev/gamedev/libRocket/Build/libRocketControls.so" />
-			<Add library="/home/gamedev/gamedev/libRocket/Build/libRocketCore.so" />
-			<Add library="/home/gamedev/gamedev/libRocket/Build/libRocketDebugger.so" />
+			<Add library="RocketControls" />
 			<Add directory="/home/Dev/libs/game/Irrlicht-SVN/lib/Linux" />
 			<Add directory="/home/Dev/libs/GUI/libRocket/Build" />
 			<Add directory="/home/gamedev/gamedev/libRocket/Build" />
