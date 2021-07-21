@@ -9,6 +9,7 @@
 			<div id="icon"></div>
 			<span id="title">Title</span>
 		</handle>
+		<div id="close" onclick="close">Close</div>
 	</div>
 	<div id="window">
 		<div id="content">

@@ -52,9 +52,8 @@
 		<Compiler>
 			<Add directory="/home/Dev/libs/game/Irrlicht-SVN/include" />
 			<Add directory="../" />
-			<Add directory="/home/Dev/libs/GUI/libRocket/Include" />
-			<Add directory="/home/gamedev/gamedev/libRocket/Include" />
-			<Add directory="/home/gamedev/gamedev/irrlicht-1.8.4/include" />
+			<Add directory="libRocket/Include" />
+			<Add directory="irrlicht-1.8.4/include" />
 		</Compiler>
 		<Linker>
 			<Add library="Irrlicht" />
@@ -64,10 +63,10 @@
 			<Add library="RocketCore" />
 			<Add library="freetype" />
 			<Add library="RocketControls" />
+			<Add library="pthread" />
 			<Add directory="/home/Dev/libs/game/Irrlicht-SVN/lib/Linux" />
-			<Add directory="/home/Dev/libs/GUI/libRocket/Build" />
-			<Add directory="/home/gamedev/gamedev/libRocket/Build" />
-			<Add directory="/home/gamedev/gamedev/irrlicht-1.8.4/bin/Linux" />
+			<Add directory="libRocket/Build" />
+			<Add directory="irrlicht-1.8.4/lib/Linux" />
 		</Linker>
 		<Unit filename="CIrrRocketEventReceiver.cpp" />
 		<Unit filename="CIrrRocketEventReceiver.h" />
@@ -116,6 +115,11 @@
 		<Unit filename="media/assets/demo5.rml" />
 		<Unit filename="media/assets/first.php" />
 		<Unit filename="media/assets/first.rml" />
+		<Unit filename="media/assets/i2-bl.tga" />
+		<Unit filename="media/assets/i2-blue.tga" />
+		<Unit filename="media/assets/i2-bluep.tga" />
+		<Unit filename="media/assets/i2-grbr.tga" />
+		<Unit filename="media/assets/i2-grbr2.tga" />
 		<Unit filename="media/assets/invader.rcss" />
 		<Unit filename="media/assets/invader.tga" />
 		<Unit filename="media/assets/present.tga" />

@@ -27,7 +27,7 @@
         <p>Third RML</p>
         <p>Custom content for third.rml</p>
          <?php
-            echo "<p>Current date: ";
+            echo "<p id='date'>Current date: ";
             echo date('Y-m-d H:i:s');
             echo "</p>";
          ?>

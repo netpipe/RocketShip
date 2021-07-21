@@ -41,9 +41,39 @@ Event::~Event()
 void Event::ProcessEvent(Rocket::Core::Event& event)
 {
     int numDocuments = Context->GetNumDocuments();
-    if(event.GetTargetElement()->GetId() == "dropdown-button") {
+    if(event.GetTargetElement()->GetId() == "close") {
+        printf("close");
+        event.GetTargetElement()->GetOwnerDocument()->Close();
+    }
+    else if(event.GetTargetElement()->GetId() == "dropdown-button") {
         printf("dropdown");
-        Rocket::Core::Element* element = Context->GetDocument(numDocuments-1)->GetElementById("dropdown-content");
+        //Rocket::Core::Element* element = Context->GetDocument(numDocuments-1)->GetElementById("dropdown-content");
+        Rocket::Core::Element* element = event.GetTargetElement()->GetOwnerDocument()->GetElementById("dropdown-content");
+        if(element != NULL) {
+            if(element->GetProperty("display")->ToString() == "block") {
+                element->SetProperty("display", "none");
+            }
+            else {
+                element->SetProperty("display", "block");
+            }
+        }
+    }
+    else if(event.GetTargetElement()->GetId() == "dropdown-button-2") {
+        printf("dropdown");
+        //Rocket::Core::Element* element = Context->GetDocument(numDocuments-1)->GetElementById("dropdown-content-2");
+        Rocket::Core::Element* element = event.GetTargetElement()->GetOwnerDocument()->GetElementById("dropdown-content-2");
+        if(element != NULL) {
+            if(element->GetProperty("display")->ToString() == "block") {
+                element->SetProperty("display", "none");
+            }
+            else {
+                element->SetProperty("display", "block");
+            }
+        }
+    }
+    else if(event.GetTargetElement()->GetId() == "sites") {
+        printf("sub-dropdown");
+        Rocket::Core::Element* element = Context->GetDocument(numDocuments-1)->GetElementById("sub-dropdown");
         if(element != NULL) {
             if(element->GetProperty("display")->ToString() == "block") {
                 element->SetProperty("display", "none");
@@ -59,6 +89,16 @@ void Event::ProcessEvent(Rocket::Core::Event& event)
         Rocket::Controls::ElementFormControlTextArea* text_area = dynamic_cast< Rocket::Controls::ElementFormControlTextArea* >(textElement);
         std::cout<<"value: "<<text_area->GetValue().CString()<<std::endl;
     }
+    else if(event.GetTargetElement()->GetId() == "open-button"){
+        printf("open-button\n");
+        Rocket::Core::ElementDocument* document = Context->LoadDocument("media/assets/" + value + ".rml");
+        if (document != NULL)
+        {
+            document->Show();
+            document->Focus();
+            document->RemoveReference();
+        }
+    }
     else {
         printf("button click\n");
         //Rocket::Core::ElementDocument* currentDocument = Context->GetDocument(numDocuments-1);
@@ -68,8 +108,8 @@ void Event::ProcessEvent(Rocket::Core::Event& event)
         Rocket::Core::ElementDocument* document = Context->LoadDocument("media/assets/" + value + ".rml");
         if (document != NULL)
         {
-            document->Focus();
             document->Show();
+            document->Focus();
             document->RemoveReference();
         }
     }

@@ -33,8 +33,38 @@
 #include "CIrrRocketEventReceiver.h"
 #include "EventInstancer.h"
 
+#include <iostream>
+#include <chrono>
+#include <thread>
+#include <functional>
+#include <ctime>
+
 unsigned int CIrrRocketGUI::RocketContextCount = 0;
 Rocket::Core::Context* context = NULL;
+
+void timer_start(std::function<void(void)> func, unsigned int interval)
+{
+    std::thread([func, interval]() {
+        while (true)
+        {
+            func();
+            std::this_thread::sleep_for(std::chrono::milliseconds(interval));
+        }
+    }).detach();
+}
+
+void updateDate()
+{
+    int numDocuments = context->GetNumDocuments();
+    auto current = std::chrono::system_clock::now();
+    std::time_t current_time = std::chrono::system_clock::to_time_t(current);
+    for(int i=0; i<numDocuments; i++) {
+        Rocket::Core::Element* element = context->GetDocument(i)->GetElementById("date");
+        if(element != NULL) {
+            element->SetInnerRML(std::ctime(&current_time));
+        }
+    }
+}
 
 CIrrRocketGUI::CIrrRocketGUI(irr::IrrlichtDevice* device) : Device(device)
 {
@@ -100,6 +130,7 @@ CIrrRocketGUI::CIrrRocketGUI(irr::IrrlichtDevice* device) : Device(device)
 	if (document)
 	{
 		document->Show();
+		document->Focus();
 		//Rocket::Core::Element* textarea = document->GetElementById("textarea");
 		//Rocket::Controls::ElementFormControlTextArea* textarea2 = dynamic_cast< Rocket::Controls::ElementFormControlTextArea** >(textarea);
 		//myeventlistener = new MyEventListener(context);
@@ -109,6 +140,8 @@ CIrrRocketGUI::CIrrRocketGUI(irr::IrrlichtDevice* device) : Device(device)
         //button->AddEventListener("click", myeventlistener, true);
 		document->RemoveReference();
 	}
+
+	timer_start(updateDate, 1000);
 }
 
 CIrrRocketGUI::~CIrrRocketGUI()
