@@ -96,7 +96,7 @@
         </div>
 
         <p>First RML</p>
-        <p id='date'>Current date: 2021-07-22 07:45:24</p>
+        <p id='date'>Current date: 2021-07-22 09:07:11</p>
         <button onclick="third" id="open-button" type="button">Open third.rml</button>
 
         <form id="form" onsubmit="input">

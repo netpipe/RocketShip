@@ -117,8 +117,8 @@ CIrrRocketGUI::CIrrRocketGUI(irr::IrrlichtDevice* device) : Device(device)
 		cursor->RemoveReference();
 
     system("php media/assets/first.php > media/assets/first.rml");
-    system("php media/assets/second.php > media/assets/second.rml");
-    system("php media/assets/third.php > media/assets/third.rml");
+  //  system("php media/assets/second.php > media/assets/second.rml");
+   // system("php media/assets/third.php > media/assets/third.rml");
 
     Rocket::Core::ElementDocument* document2 = RocketContext->LoadDocument("media/assets/second.rml");
 	if (document2)
@@ -126,22 +126,22 @@ CIrrRocketGUI::CIrrRocketGUI(irr::IrrlichtDevice* device) : Device(device)
 		document2->Show();
 		document2->RemoveReference();
 	}
-	Rocket::Core::ElementDocument* document = RocketContext->LoadDocument("media/assets/first.rml");
-	if (document)
-	{
-		document->Show();
-		document->Focus();
-		//Rocket::Core::Element* textarea = document->GetElementById("textarea");
-		//Rocket::Controls::ElementFormControlTextArea* textarea2 = dynamic_cast< Rocket::Controls::ElementFormControlTextArea** >(textarea);
-		//myeventlistener = new MyEventListener(context);
-		//Rocket::Core::Element* button = document->GetElementById("button");
-		//context->AddEventListener("click", myeventlistener, true);
-		//context->AddEventListener("mouseover", &myeventlistener, true);
-        //button->AddEventListener("click", myeventlistener, true);
-		document->RemoveReference();
-	}
-
-	timer_start(updateDate, 1000);
+//	Rocket::Core::ElementDocument* document = RocketContext->LoadDocument("media/assets/first.rml");
+//	if (document)
+//	{
+//		document->Show();
+//		document->Focus();
+//		//Rocket::Core::Element* textarea = document->GetElementById("textarea");
+//		//Rocket::Controls::ElementFormControlTextArea* textarea2 = dynamic_cast< Rocket::Controls::ElementFormControlTextArea** >(textarea);
+//		//myeventlistener = new MyEventListener(context);
+//		//Rocket::Core::Element* button = document->GetElementById("button");
+//		//context->AddEventListener("click", myeventlistener, true);
+//		//context->AddEventListener("mouseover", &myeventlistener, true);
+//        //button->AddEventListener("click", myeventlistener, true);
+//		document->RemoveReference();
+//	}
+//
+//	timer_start(updateDate, 1000);
 }
 
 CIrrRocketGUI::~CIrrRocketGUI()

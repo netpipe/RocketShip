@@ -26,7 +26,12 @@
 	<body template="window">
         <p>Third RML</p>
         <p>Custom content for third.rml</p>
-         <p id='date'>Current date: 2021-07-22 07:36:11</p>
+         <?php
+            echo "<p id='date'>Current date: ";
+            echo date('Y-m-d H:i:s');
+            echo "</p>";
+         ?>
+
         <button onclick="first" id="button-first" type="button">Load first.rml</button> <br></br>
         <button onclick="second" id="button-second" type="button">Load second.rml</button> <br></br>
 

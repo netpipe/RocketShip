@@ -96,7 +96,12 @@
         </div>
 
         <p>First RML</p>
-        <p id='date'>Current date: 2021-07-22 07:45:24</p>
+        <?php
+            echo "<p id='date'>Current date: ";
+            echo date('Y-m-d H:i:s');
+            echo "</p>";
+         ?>
+
         <button onclick="third" id="open-button" type="button">Open third.rml</button>
 
         <form id="form" onsubmit="input">
