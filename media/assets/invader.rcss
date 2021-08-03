@@ -111,7 +111,7 @@ div#content
 	width: auto;
 	height: 100%;
 
-	/*overflow: hidden auto;*/
+	overflow: hidden auto;
 
 	text-align: center;
 }
