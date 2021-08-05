@@ -111,7 +111,7 @@
 
 
         <p>Click on the image to load second.rml</p>
-        <img src="clouds.jpg" alt="image"/>
+        <img src="clouds.jpg" onclick="second"/>
 
 
     </body>

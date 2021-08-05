@@ -96,7 +96,7 @@
         </div>
 
         <p>First RML</p>
-        <p id='date'>Current date: 2021-08-03 15:49:53</p>
+        <p id='date'>Current date: 2021-08-05 15:28:44</p>
         <button onclick="third" id="open-button" type="button">Open third.rml</button>
 
         <form id="form" onsubmit="input">
@@ -106,7 +106,7 @@
 
 
         <p>Click on the image to load second.rml</p>
-        <img src="clouds.jpg" alt="image"/>
+        <img src="clouds.jpg" onclick="second"/>
 
 
     </body>
