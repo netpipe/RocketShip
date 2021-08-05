@@ -5,7 +5,6 @@ body
 	font-style: normal;
 	font-size: 15;
 	color: white;
-max-height: 100%;
 }
 
 body.window
@@ -537,4 +536,85 @@ scrollbarhorizontal
 {
 	width: 0px;
 	height: 0px;
+}
+
+
+.slider {
+    width: 200px;
+}
+
+.slider slidertrack
+{
+    height: 7px;
+    margin-top: 5px;
+	background-decorator: image;
+	background-center-image: i2-blue.tga stretch 80px 201px 97px 202px;
+}
+
+.slider sliderbar
+{
+	margin-left: 4px;
+	width: 10px;
+	min-height: 46px;
+
+	background-decorator: tiled-vertical;
+	background-top-image: i2-blue.tga 56px 152px 79px 175px;
+	background-center-image: i2-blue.tga stretch 56px 175px 79px 175px;
+	background-bottom-image: i2-blue.tga 56px 176px 79px 198px;
+}
+
+.slider sliderbar:hover
+{
+	background-top-image-s: 80px 103px;
+	background-center-image-s: 80px 103px;
+	background-bottom-image-s: 80px 103px;
+}
+
+.slider sliderbar:active
+{
+	background-top-image-s: 104px 127px;
+	background-center-image-s: 104px 127px;
+	background-bottom-image-s: 104px 127px;
+}
+
+.slider sliderarrowinc:hover
+{
+    icon-decorator: image;
+	icon-image: i2-blue.tga 40px 250px 56px 268px;
+}
+
+.slider sliderarrowinc:active
+{
+    icon-decorator: image;
+	icon-image: i2-blue.tga 40px 250px 56px 268px;
+}
+
+.slider sliderarrowinc
+{
+	width: 18px;
+	height: 18px;
+
+	icon-decorator: image;
+	icon-image: i2-blue.tga 3px 250px 21px 268px;
+}
+
+.slider sliderarrowdec:hover
+{
+    icon-decorator: image;
+	icon-image: i2-blue.tga 40px 233px 57px 250px;
+}
+
+.slider sliderarrowdec:active
+{
+    icon-decorator: image;
+	icon-image: i2-blue.tga 40px 233px 57px 250px;
+}
+
+.slider sliderarrowdec
+{
+	width: 18px;
+	height: 18px;
+
+	icon-decorator: image;
+	icon-image: i2-blue.tga 3px 232px 21px 250px;
 }

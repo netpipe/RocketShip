@@ -58,8 +58,11 @@
                 shadow-color: black;
 			}
 
-			p, img {
+			p {
                 z-index: -1;
+			}
+
+			img {
 			}
 
 			#textarea {
@@ -96,7 +99,12 @@
         </div>
 
         <p>First RML</p>
-        <p id='date'>Current date: 2021-08-05 16:29:27</p>
+        <?php
+            echo "<p id='date'>Current date: ";
+            echo date('Y-m-d H:i:s');
+            echo "</p>";
+         ?>
+
         <button onclick="third" id="open-button" type="button">Open third.rml</button>
 
         <form id="form" onsubmit="input">
@@ -104,10 +112,8 @@
 			<input type="submit">Print to console</input>
 		</form>
 
-
         <p>Click on the image to load second.rml</p>
-        <img src="clouds.jpg" onclick="second"/>
-
+        <img src="clouds.jpg" alt="image"/>
 
     </body>
 </rml>

@@ -203,6 +203,7 @@ void ElementScroll::FormatScrollbars()
 		corner_box.SetContent(Vector2f(scrollbars[VERTICAL].size, scrollbars[HORIZONTAL].size));
 		corner->SetBox(corner_box);
 		corner->SetOffset(containing_block - Vector2f(scrollbars[VERTICAL].size, scrollbars[HORIZONTAL].size), element, true);
+corner->SetProperty(CLIP, Property(1, Property::NUMBER));
 
 		corner->SetProperty(VISIBILITY, "visible");
 	}

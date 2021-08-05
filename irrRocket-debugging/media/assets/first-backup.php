@@ -51,6 +51,7 @@
 
             button {
                 color: white;
+                background-color: #1976d2;
                 float: left;
                 width: 150px;
                 shadow-font-effect: shadow;
@@ -95,19 +96,23 @@
             </div>
         </div>
 
+        <button onclick="second" id="button-second" type="button">Load second.rml</button>
+        <button onclick="third" id="button-third" type="button">Load third.rml</button>
+
         <p>First RML</p>
-        <p id='date'>Current date: 2021-08-05 16:29:27</p>
-        <button onclick="third" id="open-button" type="button">Open third.rml</button>
+        <?php
+            echo "<p>Current date: ";
+            echo date('Y-m-d H:i:s');
+            echo "</p>";
+         ?>
 
         <form id="form" onsubmit="input">
             <textarea id="textarea" cols="20" rows="2"/>
 			<input type="submit">Print to console</input>
 		</form>
 
-
         <p>Click on the image to load second.rml</p>
         <img src="clouds.jpg" onclick="second"/>
-
 
     </body>
 </rml>

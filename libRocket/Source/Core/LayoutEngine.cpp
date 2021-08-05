@@ -82,7 +82,7 @@ bool LayoutEngine::FormatElement(Element* element, const Vector2f& containing_bl
 	}
 
 	block_context_box->Close();
-	block_context_box->CloseAbsoluteElements();
+	//block_context_box->CloseAbsoluteElements();
 
 	element->OnLayout();
 
