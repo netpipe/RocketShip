@@ -94,9 +94,15 @@
                 </div>
             </div>
         </div>
-
+		<tabset>
+			<tab><img src="tab1.jpg" />Tab 1</tab>
+			<panel>
+				Welcome to the first tab!
+			</panel>
+			<tab><img src="tab2.jpg" />Tab 2</tab>
+			<panel>
         <p>First RML</p>
-        <p id='date'>Current date: 2021-08-05 16:39:06</p>
+        <p id='date'>Current date: 2021-08-05 16:54:07</p>
         <button onclick="third" id="open-button" type="button">Open third.rml</button>
 
         <form id="form" onsubmit="input">
@@ -107,6 +113,11 @@
 
         <p>Click on the image to load second.rml</p>
         <img src="clouds.jpg" onclick="second"/>
+
+			</panel>
+		</tabset>
+
+
 
 
     </body>

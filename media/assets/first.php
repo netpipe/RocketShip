@@ -94,7 +94,13 @@
                 </div>
             </div>
         </div>
-
+		<tabset>
+			<tab><img src="tab1.jpg" />Tab 1</tab>
+			<panel>
+				Welcome to the first tab!
+			</panel>
+			<tab><img src="tab2.jpg" />Tab 2</tab>
+			<panel>
         <p>First RML</p>
         <?php
             echo "<p id='date'>Current date: ";
@@ -112,6 +118,11 @@
 
         <p>Click on the image to load second.rml</p>
         <img src="clouds.jpg" onclick="second"/>
+
+			</panel>
+		</tabset>
+
+
 
 
     </body>
