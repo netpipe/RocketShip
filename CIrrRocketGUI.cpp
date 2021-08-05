@@ -141,7 +141,7 @@ CIrrRocketGUI::CIrrRocketGUI(irr::IrrlichtDevice* device) : Device(device)
 //		document->RemoveReference();
 //	}
 //
-//	timer_start(updateDate, 1000);
+	timer_start(updateDate, 1000);
 }
 
 CIrrRocketGUI::~CIrrRocketGUI()
