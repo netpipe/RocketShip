@@ -31,12 +31,7 @@
 			<panel>
                 <p>First RML</p>
                 <p>Custom content for first.rml</p>
-                <?php
-                    echo "<p id='date'>Current date: ";
-                    echo date('Y-m-d H:i:s');
-                    echo "</p>";
-                 ?>
-
+                <p id='date'>Current date: 2021-08-18 04:20:51</p>
                 <form id="form" onsubmit="input">
                     <textarea id="textarea" cols="20" rows="2"/>
                     <input type="submit">Print to console</input>
@@ -48,12 +43,7 @@
 			<panel>
                 <p>Second RML</p>
                 <p>Custom content for second.rml</p>
-                <?php
-                    echo "<p id='date'>Current date: ";
-                    echo date('Y-m-d H:i:s');
-                    echo "</p>";
-                 ?>
-
+                <p id='date'>Current date: 2021-08-18 04:20:51</p>
                 <button onclick="first" id="button-first" type="button">Load first.rml</button> <br></br>
                 <button onclick="third" id="button-third" type="button">Load third.rml</button> <br></br>
 
@@ -69,12 +59,7 @@
 			<panel>
                 <p>Third RML</p>
                 <p>Custom content for third.rml</p>
-                <?php
-                    echo "<p id='date'>Current date: ";
-                    echo date('Y-m-d H:i:s');
-                    echo "</p>";
-                 ?>
-			</panel>
+                <p id='date'>Current date: 2021-08-18 04:20:51</p>			</panel>
 		</tabset>
 
     </body>
